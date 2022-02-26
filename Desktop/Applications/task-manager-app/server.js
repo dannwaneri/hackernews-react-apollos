@@ -1,16 +1,8 @@
-const express = require('express')
+console.log('Task manager')
 
+const  express = require('express')
 const app = express()
+const port = 5000
 
-const port = process.env || 3000;
-
-
-app.get('/',(req,res) => {
-    res.send(`Hell0 world`)
-})
-
-
-
-app.listen(port,()=> console.log(`express is listening on port ${port}`))
-
-
+app.get('/', (req, res) => res.send('Hello World!'))
+app.listen(port, () => console.log(`Express server listening on port ${port}!`))
