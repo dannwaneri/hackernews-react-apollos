@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -15,8 +15,8 @@ app.get("/api/v1", (req, res) => {
 
 
 // All other GET requests not handled before will return our React app
-// And if a GET request 
-//comes in that is not handled by our /api/v1 route, our server will respond with our React app.
+// And if a GET request comes in that is not handled by our /api/v1 route
+// our server will respond with our React app.
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
   });
